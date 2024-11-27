@@ -39,24 +39,32 @@ public class OrderSweater {
 //            driver.findElement(By.cssSelector("btn btn-primary add-to-cart")).click();
 //           driver.findElement(By.xpath("//div/div[[@class='add']]/button[contains(text(),Add to cart')]")).click();
 
+//próbowałam tak ale nie działa bo wydaje mi się ze te elementy są w iFrame
+//            WebElement quantityInput = driver.findElement(By.id("quantity_wanted"));
+//           quantityInput.clear();
+//            quantityInput.sendKeys("5");
 
+            driver.findElement(By.xpath("//div[@class='product-quantityclearfix']/div/div/span/button/i[@class='material-icons touchspin-up']")).click();
+            Thread.sleep(1000);
 
-            WebElement quantityInput = driver.findElement(By.id("quantity_wanted"));
-//           to mi nie działa, nie czyści pola tylko do jedynki dodaje 5
-            quantityInput.clear();
-            quantityInput.sendKeys("5");
+            driver.findElement(By.xpath("//div[@class='product-quantityclearfix']/div/div/span/button/i[@class='material-icons touchspin-up']")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//div[@class='product-quantityclearfix']/div/div/span/button/i[@class='material-icons touchspin-up']")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//div[@class='product-quantityclearfix']/div/div/span/button/i[@class='material-icons touchspin-up']")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//div[@class='product-quantityclearfix']/div/div/span/button/i[@class='material-icons touchspin-up']")).click();
+            Thread.sleep(1000);
 
             driver.findElement(By.xpath("//div/div[@class='add']/button")).click();
-//            driver.findElement(By.cssSelector("button[data-button-action='add-to-cart']"))
-//                    .click();
 
 
-            driver.findElement(By.xpath("//div/div[@class='cart']/button")).click();
-            WebElement btnCheckOut = driver.findElement(By.xpath("//div/div[@class='text']"));
+            driver.findElement(By.xpath("//div/div[@class='add']/button")).click();
+            WebElement btnCheckOut = driver.findElement(By.xpath("//div[@class='cart-content']/div[@class='cart-content-btn']/a"));
             btnCheckOut.click();
 
 
-            driver.findElement(By.name("confirm-addresses")).click();
+            driver.findElement(By.xpath("//[@class='tex-sm-center']/a[text()='Proceed to checkout']")).click();
 
 //zaznacza się z automatu
 //            driver.findElement(By.id("delivery_option_1")).click();
